@@ -1,0 +1,81 @@
+
+
+entity Location {
+	streetAddress String,
+	city String,
+	house String,
+    flat String
+}
+
+entity Department {
+	departmentName String required
+}
+
+entity Employee {
+	/**
+	* The firstname attribute.
+	*/
+	firstName String,
+	lastName String,
+	email String,
+	phoneNumber String,
+	hireDate Instant,
+	salary Long,
+	commissionPct Long
+}
+
+entity Catalog {
+	id String,
+    name String
+}
+entity Microservice {
+	id String, 
+    name String,
+    status Status
+}
+
+enum Status {
+	NEW, INPROCESS
+}
+relationship OneToMany {
+	Catalog{microservice} to Microservice
+}
+
+relationship OneToOne {
+	Employee{location} to Location
+}
+
+relationship OneToMany {
+	Microservice{mircoservice} to Microservice
+}
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+
+	/**
+	* A relationship
+	*/
+	Department{employee} to
+	/**
+	* Another side of the same relationship
+	*/
+	Employee
+}
+
+relationship ManyToOne {
+	Employee{manager} to Employee
+}
+
+
+paginate Employee with infinite-scroll
+paginate Microservice with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Employee
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

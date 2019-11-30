@@ -1,0 +1,27 @@
+{
+    "name": "Catalog",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "microservice",
+            "otherEntityRelationshipName": "catalog",
+            "relationshipName": "microservice"
+        }
+    ],
+    "changelogDate": "20191130164151",
+    "entityTableName": "catalog",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

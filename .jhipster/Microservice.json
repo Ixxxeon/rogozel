@@ -1,0 +1,33 @@
+{
+    "name": "Microservice",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Status",
+            "fieldValues": "NEW,INPROCESS"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "catalog",
+            "otherEntityRelationshipName": "microservice",
+            "relationshipName": "catalog",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191130164152",
+    "entityTableName": "microservice",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
