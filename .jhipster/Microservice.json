@@ -8,7 +8,7 @@
         {
             "fieldName": "status",
             "fieldType": "Status",
-            "fieldValues": "NEW,INPROCESS"
+            "fieldValues": "NEW,INPROCESS, STOPPED, WORK"
         }
     ],
     "relationships": [

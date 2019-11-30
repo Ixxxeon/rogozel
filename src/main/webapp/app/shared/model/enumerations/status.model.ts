@@ -1,4 +1,6 @@
 export const enum Status {
   NEW = 'NEW',
-  INPROCESS = 'INPROCESS'
+  INPROCESS = 'INPROCESS',
+  STOPPED = 'STOPPED',
+  WORK = 'WORK'
 }

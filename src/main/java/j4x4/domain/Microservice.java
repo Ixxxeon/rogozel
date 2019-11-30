@@ -4,8 +4,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import j4x4.domain.enumeration.Status;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * A Microservice.

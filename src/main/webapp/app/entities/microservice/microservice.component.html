@@ -2,7 +2,7 @@
     <h2 id="page-heading">
         <span>Microservices</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-microservice" [routerLink]="['/microservice/new']">
-            <fa-icon [icon]="'plus'"></fa-icon>
+            <fa-icon [icon]="'fas fa-server'"></fa-icon>
             <span >
             Create a new Microservice
             </span>
@@ -29,7 +29,10 @@
             <tr *ngFor="let microservice of microservices ;trackBy: trackId">
                 <td><a [routerLink]="['/microservice', microservice.id, 'view' ]">{{microservice.id}}</a></td>
                 <td>{{microservice.name}}</td>
-                <td>{{microservice.status}}</td>
+                <td *ngIf = "microservice.status==='NEW'">Новый</td>
+                <td *ngIf = "microservice.status==='INPROCESS'">В разработке</td>
+                <td *ngIf = "microservice.status==='STOPPED'">Не работает</td>
+                <td *ngIf = "microservice.status==='WORK'">Работает</td>
                 <td>
                     <div *ngIf="microservice.catalog">
                         <a [routerLink]="['/catalog', microservice.catalog?.id, 'view' ]" >{{microservice.catalog?.id}}</a>
